@@ -1,5 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using VirtualCarHustler.Models;
@@ -40,11 +44,11 @@ namespace VirtualCarHustler.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(VehicleModel taskToCreate)
+        public async Task<IActionResult> Create(VehicleModel vehToCreate)
         {
-            await _dataContext.Vehicles.AddAsync(taskToCreate);
+            await _dataContext.Vehicles.AddAsync(vehToCreate);
             await _dataContext.SaveChangesAsync();
-            return CreatedAtAction("GetById", new { taskToCreate.Id }, taskToCreate);
+            return CreatedAtAction("GetById", new { vehToCreate.Id }, vehToCreate);
         }
 
     }
