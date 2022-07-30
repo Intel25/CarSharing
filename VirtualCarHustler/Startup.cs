@@ -33,6 +33,7 @@ namespace VirtualCarHustler
             services.AddDbContext<DataContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            
             services.Configure<JwtConfig>(Configuration.GetSection("JwtConfig"));
 
             // within this section we are configuring the authentication and setting the default scheme

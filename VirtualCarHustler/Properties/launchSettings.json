@@ -3,7 +3,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:12601",
+      "applicationUrl": "http://localhost:12601/api/allvehicles",
       "sslPort": 44317
     }
   },
